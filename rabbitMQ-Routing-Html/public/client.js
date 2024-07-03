@@ -18,6 +18,10 @@ inviaButton.addEventListener('click', function () {
 
     console.log(`Messaggio: ${textMessaggio} | Tipologia: ${scelta}`);
 
+    //#####################################
+    // Post sul server
+    //#####################################
+
     fetch('/send', {
         method: 'POST',
         headers: {

@@ -25,7 +25,7 @@ amqp.connect('amqp://localhost', function (error0, connection) {
       }
       console.log(' [*] Waiting for logs. To exit press CTRL+C');
 
-      // Binda le code per le severità specificate
+      // Binda le code per le tutte le attività specifiche
       ['info', 'warning', 'error'].forEach(function (severity) {
         channel.bindQueue(q.queue, exchange, severity);
       });

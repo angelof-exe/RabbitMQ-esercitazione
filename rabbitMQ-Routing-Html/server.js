@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const amqp = require('amqplib/callback_api');
-const { spawn } = require('child_process');
+const { spawn } = require('child_process'); // -> Libreria necessaria per chiamare lo script
 const fs = require('fs');
 const app = express();
 const port = 3000;
@@ -10,9 +10,14 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// #####################################################
+//  Avvio dello script 
+// #####################################################
+
 // Avvia lo script receive_logs_direct.js
 const receiveLogs = spawn('node', ['receive_logs_direct.js', 'info', 'warning', 'error']);
 
+//Stampa sulla console del server .js ciò che viene stampato sullo script receive_logs_direct.js 
 receiveLogs.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);
 });
@@ -24,6 +29,10 @@ receiveLogs.stderr.on('data', (data) => {
 receiveLogs.on('close', (code) => {
     console.log(`receive_logs_direct.js exited with code ${code}`);
 });
+
+// #####################################################
+//  Ricevere il post dal client
+// #####################################################
 
 app.post('/send', (req, res) => {
     const message = req.body.message;

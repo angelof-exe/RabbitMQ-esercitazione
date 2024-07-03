@@ -1,6 +1,11 @@
 
 # Lista di progetti fatti con RabbitMQ per JavaScript
 
+
+# Tabella dei contenuti
+
+1. [Rabbit Routing HTML](#rabbit-routing-html)
+
 ## Rabbit Routing HTML
 Primo progetto per mettere mano sul come far comunicare una semplice pagina HTML col server di AMQP tramite la libreria RabbitMQ per JavaScript
 
@@ -34,4 +39,3 @@ receiveLogs.on('close', (code) => {
       });
 ```
 Il seguente codice fa un binding tra l'exchange e la queue, ovvero la queue è interessato dei messaggi da questo exchange. [Per maggiori info clicca qui.](https://www.rabbitmq.com/tutorials/tutorial-four-javascript#bindings)
-

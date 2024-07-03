@@ -8,6 +8,8 @@
 
 ## Rabbit Routing HTML
 Primo progetto per mettere mano sul come far comunicare una semplice pagina HTML col server di AMQP tramite la libreria RabbitMQ per JavaScript
+![ScreenShot_Progetto_1](https://raw.githubusercontent.com/angelof-exe/RabbitMQ-esercitazione/main/rabbitMQ-Routing-Html/screenshot/Schermata%20del%202024-07-03%2012-38-52.png)
+
 
 ### Descrizione
 

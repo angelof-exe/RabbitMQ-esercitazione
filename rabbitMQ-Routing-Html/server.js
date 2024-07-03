@@ -10,9 +10,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// #####################################################
-//  Avvio dello script 
-// #####################################################
+//#####################################################
+// Avvio dello script 
+//#####################################################
 
 // Avvia lo script receive_logs_direct.js
 const receiveLogs = spawn('node', ['receive_logs_direct.js', 'info', 'warning', 'error']);
@@ -30,9 +30,9 @@ receiveLogs.on('close', (code) => {
     console.log(`receive_logs_direct.js exited with code ${code}`);
 });
 
-// #####################################################
-//  Ricevere il post dal client
-// #####################################################
+//#####################################################
+// Ricevere il post dal client
+//#####################################################
 
 app.post('/send', (req, res) => {
     const message = req.body.message;

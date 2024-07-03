@@ -34,7 +34,7 @@ amqp.connect('amqp://localhost', function (error0, connection) {
         var logMessage = ` [x] ${msg.fields.routingKey}: '${msg.content.toString()}'\n`;
         console.log(logMessage);
         logStream.write(logMessage);  // Scrive il log nel file
-      }, {
+      }, { //Options1<
         noAck: true
       });
     });

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Messaggio</h3>
+    <input type="text" id="messaggio">
+    <h3>Tipologia</h3>
+
+    <form>
+        <div>
+            <input type="radio" name="tipologia" value="tipologia" id="sceltaInfo" checked>
+            <label for="sceltaInfo">Info</label><br>
+        </div>
+
+        <div>
+            <input type="radio" name="tipologia" value="tipologia" id="sceltaError">
+            <label for="sceltaError">Error</label><br>
+        </div>
+
+        <div>
+            <input type="radio" name="tipologia" value="tipologia" id="sceltaWarning">
+            <label for="sceltaWarning">Warning</label><br>
+        </div>
+    </form>
+
+    <input type="submit" id="inviaButton" value="Invia">
+    <script src='client.js'></script>
+</body>
+
+</html>

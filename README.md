@@ -45,6 +45,8 @@ receiveLogs.on('close', (code) => {
 Il seguente codice fa un binding tra l'exchange e la queue, ovvero la queue è interessato dei messaggi da questo exchange. [Per maggiori info clicca qui.](https://www.rabbitmq.com/tutorials/tutorial-four-javascript#bindings)
 
 ## RabbitMQ-StampaHTMLsuSCHERMO
+![GIF_Progetto_2](https://raw.githubusercontent.com/angelof-exe/RabbitMQ-esercitazione/main/RabbitMQ-StampaHTMLsuSCHERMO/screenshot/video_dimostrativo.gif)
+
 Secondo progetto in cui si cerca di stampare su schermo ciò che viene inserito inviando una oggetto JSON. 
 
 **IMPORTANTE!**

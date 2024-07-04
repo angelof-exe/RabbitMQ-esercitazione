@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const port = 3000;
+const fs = require('fs');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,8 +15,7 @@ const amqp = require('amqplib/callback_api');
 // Evocazione dello script receiver.js e altre impostazioni
 //##############################################################
 
-// Avvia lo script receiver.js
-const receiveLogs = spawn('node', ['receiver.js']);
+const receiveLogs = spawn('node', ['receiver.js']);// Avvia lo script receiver.js
 
 //Stampa sulla console del server .js ciò che viene stampato sullo script receive_logs_direct.js 
 receiveLogs.stdout.on('data', (data) => {
@@ -45,6 +45,7 @@ app.post('/send', function (req, res) {
         if (error0) {
             throw error0;
         }
+
         connection.createChannel(function (error1, channel) {
             if (error1) {
                 throw error1;
@@ -63,6 +64,7 @@ app.post('/send', function (req, res) {
             channel.sendToQueue(queue, Buffer.from(msg));
             console.log(" [x] Sent %s", msg);
         });
+
         setTimeout(function () {
             connection.close();
         }, 500);

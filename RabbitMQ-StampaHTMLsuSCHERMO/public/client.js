@@ -10,6 +10,7 @@ socket.addEventListener('open', function (event) {
     console.log('WebSocket is connected.');
 });
 
+// Quando nella Socket arriva un messaggio, viene aggiunto nel div result il contenuto del messaggio
 socket.addEventListener('message', function (event) {
     console.log('Message from server ', event.data);
     const data = JSON.parse(event.data);
@@ -17,7 +18,7 @@ socket.addEventListener('message', function (event) {
 });
 
 button.addEventListener('click', function () {
-    console.log(`Nome: ${nome.value} Cognome: ${cognome.value} Anno: ${anno.value}`)
+    // console.log(`Nome: ${nome.value} Cognome: ${cognome.value} Anno: ${anno.value}`)
     fetch('/send', {
         method: 'POST',
         headers: {
@@ -43,11 +44,4 @@ function createComponent(componente) {
         </div>
     </div>
     `;
-}
-
-function stampaComponentiEsistenti(data) {
-    result.innerHTML = '';
-    data.forEach((componente, index) => {
-        result.innerHTML += createComponent(componente, index);
-    });
 }

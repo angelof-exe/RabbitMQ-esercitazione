@@ -35,11 +35,6 @@ amqp.connect('amqp://raspberry:raspberry@192.168.2.163:5672', function (error0, 
         // console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
         channel.consume(queue_raspberry2, function (msg) {
             var secs = msg.content.toString().split('.').length - 1;
-            console.log(`STAMPO LA JSON:${msg.content.toString()}`)
-            //#######################
-            // Ri-invia al raspberry
-            //#######################
-
             console.log(" [x] Received %s", msg.content.toString());
 
             // Send the message to all connected WebSocket clients

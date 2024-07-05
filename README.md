@@ -1,15 +1,17 @@
 
 
-# Lista di progetti fatti con RabbitMQ per JavaScript
 
+# Lista di progetti fatti con RabbitMQ per JavaScript
+[![NodeJS](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en) [![RabbitMQ](https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 # Tabella dei contenuti
 
 1. [Rabbit Routing HTML](#rabbit-routing-html)
 2. [RabbitMQ StampaHTML su SCHERMO senza salvare file](#RabbitMQ-StampaHTMLsuSCHERMO)
+3. [Raspberry Calcola somma di due numeri e StampaHTML]
 
-## Rabbit Routing HTML
-Primo progetto per mettere mano sul come far comunicare una semplice pagina HTML col server di AMQP tramite la libreria RabbitMQ per JavaScript
+## [Rabbit Routing HTML](https://github.com/angelof-exe/RabbitMQ-esercitazione/tree/main/rabbitMQ-Routing-Html)
+**Primo progetto** per mettere mano sul come far comunicare una semplice pagina HTML col server di AMQP tramite la libreria RabbitMQ per JavaScript
 ![ScreenShot_Progetto_1](https://raw.githubusercontent.com/angelof-exe/RabbitMQ-esercitazione/main/rabbitMQ-Routing-Html/screenshot/Schermata%20del%202024-07-03%2012-38-52.png)
 
 
@@ -44,7 +46,7 @@ receiveLogs.on('close', (code) => {
 ```
 Il seguente codice fa un binding tra l'exchange e la queue, ovvero la queue è interessato dei messaggi da questo exchange. [Per maggiori info clicca qui.](https://www.rabbitmq.com/tutorials/tutorial-four-javascript#bindings)
 
-## RabbitMQ-StampaHTMLsuSCHERMO
+## [RabbitMQ-StampaHTMLsuSCHERMO](https://github.com/angelof-exe/RabbitMQ-esercitazione/tree/main/RabbitMQ-StampaHTMLsuSCHERMO)
 
 
 <img src="https://raw.githubusercontent.com/angelof-exe/RabbitMQ-esercitazione/main/RabbitMQ-StampaHTMLsuSCHERMO/screenshot/video_dimostrativo.gif" width="70%"/>
@@ -105,4 +107,11 @@ channel.consume(queue, function (msg) {
 	noAck:  false
 
 });
+```
+
+## [Raspberry Sum Numbers](https://github.com/angelof-exe/RabbitMQ-esercitazione/tree/main/RaspBerry%20Sum%20Numbers)
+Terzo progetto *(upgrage del progetto [RASPBERRY RabbitMQ-StampaHTMLsuSCHERMO](https://github.com/angelof-exe/RabbitMQ-esercitazione/tree/main/RASPBERRY%20RabbitMQ-StampaHTMLsuSCHERMO))* in cui il server invia due numeri al Raspberry tramite la queue `numeri_da_calcolare`, il `receiver_RASPBERRY.js` "consuma" questi due numeri presenti nella queue, li somma e li invia alla queue `risultati_calcolo`. Il file `receiver_RASPBERRY.js` va inserito nel Raspberry e fatto partire da lì.
+Per questo progetto si deve installare il modulo **DOT ENV**
+```
+npm i dotenv
 ```

@@ -1,4 +1,3 @@
-const fs = require('fs');
 var amqp = require('amqplib/callback_api');
 const WebSocket = require('ws');
 

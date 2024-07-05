@@ -17,7 +17,7 @@ const amqp = require('amqplib/callback_api');
 
 const receiveLogs = spawn('node', ['receiver.js']);// Avvia lo script receiver.js
 
-//Stampa sulla console del server .js ciò che viene stampato sullo script receive_logs_direct.js 
+//Stampa sulla console del server .js ciò che viene stampato sullo script receiver.js 
 receiveLogs.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);
 });

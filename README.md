@@ -8,7 +8,7 @@
 
 1. [Rabbit Routing HTML](#rabbit-routing-html)
 2. [RabbitMQ StampaHTML su SCHERMO senza salvare file](#RabbitMQ-StampaHTMLsuSCHERMO)
-3. [Raspberry Calcola somma di due numeri e StampaHTML]
+3. [Raspberry Calcola somma di due numeri e StampaHTML](#Raspberry-Sum-Numbers)
 
 ## [Rabbit Routing HTML](https://github.com/angelof-exe/RabbitMQ-esercitazione/tree/main/rabbitMQ-Routing-Html)
 **Primo progetto** per mettere mano sul come far comunicare una semplice pagina HTML col server di AMQP tramite la libreria RabbitMQ per JavaScript

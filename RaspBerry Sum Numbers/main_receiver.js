@@ -17,7 +17,7 @@ wss.on('connection', function (ws) {
     console.log('WebSocket connection established');
 });
 
-amqp.connect('amqp://localhost', function (error0, connection) {
+amqp.connect(`amqp://${username}:${password}@${IP_addr}:${IP_port}`, function (error0, connection) {
     if (error0) {
         throw error0;
     }

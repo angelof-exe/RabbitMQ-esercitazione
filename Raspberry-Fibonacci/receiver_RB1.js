@@ -35,12 +35,12 @@ amqp.connect(`amqp://${username}:${password}@${IP_addr}:${IP_port}`, function (e
             channel.bindQueue(q.queue, exchange, 'RB1'); //CAMBIARE L'ULTIMO PARAMETRO A SECONDA DELLA SCELTA
 
             channel.consume(q.queue, function (msg) {
-
-                // channel.sendToQueue(queue_results, Buffer.from('Sto calcolando...'));
+                var startTime = performance.now()
                 var r = fibonacci(parseInt(msg.content.toString()));
-                console.log(" [x] RB1: '%s'", r.toString());
+                var endTime = performance.now()
+                console.log(" [x] RB2: '%s'", r.toString());
 
-                channel.sendToQueue(queue_results, Buffer.from(`${r.toString()} RB1`));
+                channel.sendToQueue(queue_results, Buffer.from(`${r.toString()} RB1\nTempo di calcolo: ${endTime - startTime} ms`));
             }, {
                 noAck: true
             });
